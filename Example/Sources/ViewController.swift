@@ -3,22 +3,17 @@
 // Copyright © 2020 Hexed Bits. all rights reserved.
 // 
 
+import AboutThisApp
 import Cocoa
 
-class ViewController: NSViewController {
+final class ViewController: NSViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
-    override var representedObject: Any? {
-        didSet {
-        // Update the view, if already loaded.
-        }
+    @IBAction func didClickDisplay(_ sender: NSButton) {
+        let panel = AboutThisAppPanel()
+        panel.makeKeyAndOrderFront(nil)
     }
-
-
 }
-
