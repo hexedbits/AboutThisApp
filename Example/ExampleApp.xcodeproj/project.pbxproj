@@ -111,11 +111,11 @@
 			isa = PBXGroup;
 			children = (
 				8843D49423DD24B700CC7517 /* AppDelegate.swift */,
-				8843D49623DD24B700CC7517 /* ViewController.swift */,
 				8843D49823DD24B800CC7517 /* Assets.xcassets */,
-				8843D49A23DD24B800CC7517 /* Main.storyboard */,
-				8843D49D23DD24B800CC7517 /* Info.plist */,
 				8843D49E23DD24B800CC7517 /* ExampleApp.entitlements */,
+				8843D49D23DD24B800CC7517 /* Info.plist */,
+				8843D49A23DD24B800CC7517 /* Main.storyboard */,
+				8843D49623DD24B700CC7517 /* ViewController.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";

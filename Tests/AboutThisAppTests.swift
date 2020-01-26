@@ -1,7 +1,16 @@
 //
-// Created by Jesse Squires on 1/25/20.
-// Copyright © 2020 Hexed Bits. all rights reserved.
-// 
+//  Created by Jesse Squires
+//  https://www.jessesquires.com
+//
+//  Documentation
+//  https://hexedbits.github.io/AboutThisApp
+//
+//  GitHub
+//  https://github.com/hexedbits/AboutThisApp
+//
+//  Copyright © 2020-present Jesse Squires, Hexed Bits
+//  https://www.hexedbits.com
+//
 
 import XCTest
 @testable import AboutThisApp
