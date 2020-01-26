@@ -6,23 +6,27 @@
 import Cocoa
 
 extension Bundle {
-    var shortVersionString: String {
-        let release = self.infoDictionary!["CFBundleShortVersionString"]!
+    var shortVersionString: String? {
+        guard let release = self.infoDictionary?["CFBundleShortVersionString"] else {
+            return nil
+        }
         return "Version \(release)"
     }
-
-    var fullVersionString: String {
-        let release = self.infoDictionary!["CFBundleShortVersionString"]!
-        let build = self.infoDictionary!["CFBundleVersion"]!
+    
+    var fullVersionString: String? {
+        guard let release = self.shortVersionString,
+            let build = self.infoDictionary?["CFBundleVersion"] else {
+                return nil
+        }
         return "Version \(release) (\(build))"
     }
-
-    var appName: String {
-        self.infoDictionary!["CFBundleName"] as! String
+    
+    var appName: String? {
+        self.infoDictionary?["CFBundleName"] as? String
     }
-
-    var copyright: String {
-        self.infoDictionary!["NSHumanReadableCopyright"] as! String
+    
+    var copyright: String? {
+        self.infoDictionary?["NSHumanReadableCopyright"] as? String
     }
 }
 
@@ -33,8 +37,8 @@ extension NSImage {
 }
 
 extension NSTextField {
-    convenience init(label: String) {
-        self.init(string: label)
+    convenience init(label: String?) {
+        self.init(string: label ?? "")
         self.textColor = .labelColor
         self.isEditable = false
         self.isSelectable = false
