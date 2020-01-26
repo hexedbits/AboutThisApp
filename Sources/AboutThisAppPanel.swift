@@ -6,21 +6,23 @@
 import Cocoa
 
 public final class AboutThisAppPanel: NSPanel {
-
+    
+    public let aboutViewController: AboutThisAppViewController
+    
     public init() {
+        self.aboutViewController = AboutThisAppViewController()
+        
         super.init(contentRect: .zero, styleMask: [.titled, .closable], backing: .buffered, defer: false)
-
-        let controller = AboutThisAppViewController()
-        self.contentViewController = controller
-
-        let viewSize = controller.view.frame.size
+        
+        self.contentViewController = self.aboutViewController
+        let viewSize = self.aboutViewController.preferredContentSize
         self.maxSize = viewSize
         self.minSize = viewSize
-
+        
         self.titleVisibility = .hidden
         self.titlebarAppearsTransparent = true
         self.becomesKeyOnlyIfNeeded = false
-
+        
         let screenFrame = NSScreen.main!.frame
         let leftPoint = NSPoint(x: screenFrame.midX - (viewSize.width / 2), y: screenFrame.maxY)
         self.setFrameTopLeftPoint(leftPoint)
