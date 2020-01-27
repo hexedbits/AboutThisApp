@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8834D77123DF946000F2F09D /* AppMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8834D77023DF946000F2F09D /* AppMetadata.swift */; };
 		8843D47423DD22B100CC7517 /* AboutThisApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8843D46A23DD22B100CC7517 /* AboutThisApp.framework */; };
 		8843D47923DD22B100CC7517 /* AboutThisAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8843D47823DD22B100CC7517 /* AboutThisAppTests.swift */; };
 		8843D48623DD232700CC7517 /* AboutThisAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8843D48423DD232700CC7517 /* AboutThisAppViewController.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8834D77023DF946000F2F09D /* AppMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMetadata.swift; sourceTree = "<group>"; };
 		8843D46A23DD22B100CC7517 /* AboutThisApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AboutThisApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8843D46E23DD22B100CC7517 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8843D47323DD22B100CC7517 /* AboutThisAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AboutThisAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,6 +79,7 @@
 			children = (
 				8843D4C123DD324400CC7517 /* AboutThisAppPanel.swift */,
 				8843D48423DD232700CC7517 /* AboutThisAppViewController.swift */,
+				8834D77023DF946000F2F09D /* AppMetadata.swift */,
 				8843D4C323DD509500CC7517 /* Extensions.swift */,
 				8843D46E23DD22B100CC7517 /* Info.plist */,
 			);
@@ -203,6 +206,7 @@
 			files = (
 				8843D4C223DD324400CC7517 /* AboutThisAppPanel.swift in Sources */,
 				8843D4C423DD509500CC7517 /* Extensions.swift in Sources */,
+				8834D77123DF946000F2F09D /* AppMetadata.swift in Sources */,
 				8843D48623DD232700CC7517 /* AboutThisAppViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -277,7 +281,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -334,7 +338,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;

@@ -16,26 +16,53 @@ import Cocoa
 
 public final class AboutThisAppViewController: NSViewController {
 
-    public var iconSize = CGFloat(80)
+    // MARK: Properties
+
+    public let metadata: AppMetadata
+
+    private var displayAltText = false
+
+    // MARK: Views
 
     public private(set) lazy var iconImageView: NSImageView = {
-        NSImageView(image: NSImage.appIcon)
+        NSImageView(image: self.metadata.icon)
     }()
 
     public private(set) lazy var appNameLabel: NSTextField = {
-        let label = NSTextField(label: Bundle.main.appName)
+        let label = NSTextField(label: self.metadata.name)
         label.font = NSFont.boldSystemFont(ofSize: 16)
         return label
     }()
 
+    public private(set) lazy var versionButton: NSButton = {
+        let btn = NSButton(title: self.metadata.versionText,
+                           target: self,
+                           action: #selector(didClickVersion(_:)))
+        btn.isBordered = false
+        btn.contentTintColor = .secondaryLabelColor
+        return btn
+    }()
+
+    public private(set) lazy var urlButton: NSButton = {
+        let btn = NSButton(title: self.metadata.url.displayText,
+                           target: self,
+                           action: #selector(didClickURL(_:)))
+        btn.isBordered = false
+        btn.contentTintColor = self.metadata.urlColor
+        return btn
+    }()
+
     public private(set) lazy var copyrightLabel: NSTextField = {
-        let label = NSTextField(label: Bundle.main.copyright)
+        let label = NSTextField(label: self.metadata.copyrightText)
         label.font = NSFont.labelFont(ofSize: 10)
         label.textColor = .labelColor
         return label
     }()
 
-    public init() {
+    // MARK: Init
+
+    public init(metadata: AppMetadata) {
+        self.metadata = metadata
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -44,19 +71,23 @@ public final class AboutThisAppViewController: NSViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
+    // MARK: View Lifecycle
+
+    /// :nodoc:
     public override func loadView() {
         self.view = NSView()
-        let padding = CGFloat(16.0)
 
         let stackView = NSStackView(views: [
             self.iconImageView,
             self.appNameLabel,
+            self.versionButton,
+            self.urlButton,
             self.copyrightLabel
         ])
 
         stackView.orientation = .vertical
         stackView.distribution = .fillProportionally
-        stackView.spacing = 8.0
+        stackView.spacing = 10
         stackView.alignment = .centerX
         stackView.setContentCompressionResistancePriority(.required, for: .horizontal)
         stackView.setContentCompressionResistancePriority(.required, for: .vertical)
@@ -64,55 +95,25 @@ public final class AboutThisAppViewController: NSViewController {
         self.view.addSubview(stackView)
 
         NSLayoutConstraint.activate([
-            self.iconImageView.widthAnchor.constraint(equalToConstant: self.iconSize),
-            self.iconImageView.heightAnchor.constraint(equalToConstant: self.iconSize),
-            stackView.topAnchor.constraint(equalTo: self.view.topAnchor),
-            stackView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -padding),
-            stackView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: padding),
-            stackView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -padding),
+            self.iconImageView.widthAnchor.constraint(equalToConstant: self.metadata.iconSize),
+            self.iconImageView.heightAnchor.constraint(equalToConstant: self.metadata.iconSize),
+            stackView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 4),
+            stackView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -16),
+            stackView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 32),
+            stackView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -32),
         ])
     }
 
-    override public func viewDidLoad() {
-        super.viewDidLoad()
+    // MARK: Actions
+
+    @objc
+    private func didClickVersion(_ sender: NSButton) {
+        self.displayAltText.toggle()
+        self.versionButton.cell?.title = self.displayAltText ? self.metadata.altVersionText : self.metadata.versionText
+    }
+
+    @objc
+    private func didClickURL(_ sender: NSButton) {
+        NSWorkspace.shared.open(self.metadata.url)
     }
 }
-
-/*
-    @IBOutlet private weak var imageView: NSImageView!
-    @IBOutlet private weak var appNameLabel: NSTextField!
-    @IBOutlet private weak var versionButton: NSButton!
-    @IBOutlet private weak var linkButton: NSButton!
-    @IBOutlet private weak var copyrightLabel: NSTextField!
-
-    let link = URL(string: "https://hexedbits.com/lucifer")!
-//    let linkColor
-    let easterEggText = "👿 Hail Satan 👿"
-
-    private var easterEgg = false
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        self.imageView.image = NSImage.appIcon
-        self.appNameLabel.cell?.title = Bundle.main.appName
-        self.linkButton.title = self.link.host! + self.link.path
-        self.copyrightLabel.cell?.title = Bundle.main.copyright
-        self.updateVersionText()
-    }
-
-    func updateVersionText() {
-        self.versionButton.cell?.title = self.easterEgg ? self.easterEggText : Bundle.main.versionString
-    }
-
-    @IBAction func didClickVersionButton(_ sender: NSButton) {
-        self.easterEgg.toggle()
-        self.updateVersionText()
-    }
-
-    @IBAction func didClickLinkButton(_ sender: NSButton) {
-        NSWorkspace.shared.open(self.link)
-    }
-}
-
-*/

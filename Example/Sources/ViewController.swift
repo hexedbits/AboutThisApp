@@ -22,7 +22,11 @@ final class ViewController: NSViewController {
     }
 
     @IBAction func didClickDisplay(_ sender: NSButton) {
-        let panel = AboutThisAppPanel()
+        let metadata = AppMetadata(versionText: Bundle.main.fullVersionString!,
+                                   altVersionText: "Suprise 🎉",
+                                   url: URL(string: "https://hexedbits.com")!,
+                                   urlColor: .systemRed)
+        let panel = AboutThisAppPanel(metadata: metadata)
         panel.makeKeyAndOrderFront(nil)
     }
 }

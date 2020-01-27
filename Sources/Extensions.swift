@@ -15,33 +15,42 @@
 import Cocoa
 
 extension Bundle {
-    var shortVersionString: String? {
+    public var shortVersionString: String? {
         guard let release = self.infoDictionary?["CFBundleShortVersionString"] else {
             return nil
         }
         return "Version \(release)"
     }
     
-    var fullVersionString: String? {
+    public var fullVersionString: String? {
         guard let release = self.shortVersionString,
             let build = self.infoDictionary?["CFBundleVersion"] else {
                 return nil
         }
-        return "Version \(release) (\(build))"
+        return "\(release) (\(build))"
     }
     
-    var appName: String? {
+    public var appName: String? {
         self.infoDictionary?["CFBundleName"] as? String
     }
     
-    var copyright: String? {
+    public var copyright: String? {
         self.infoDictionary?["NSHumanReadableCopyright"] as? String
     }
 }
 
 extension NSImage {
-    static var appIcon: NSImage {
-        NSImage(named: "AppIcon")!
+    public static var appIcon: NSImage? {
+        NSImage(named: "AppIcon")
+    }
+}
+
+extension URL {
+    var displayText: String {
+        guard let host = self.host else {
+            return self.absoluteString
+        }
+        return host + self.path
     }
 }
 
