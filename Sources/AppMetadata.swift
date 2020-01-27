@@ -26,7 +26,7 @@ public struct AppMetadata {
 
     public let altVersionText: String
 
-    public let url: URL
+    public let url: URL?
 
     public let urlColor: NSColor
 
@@ -37,7 +37,7 @@ public struct AppMetadata {
                 name: String = Bundle.main.appName!,
                 versionText: String = Bundle.main.shortVersionString!,
                 altVersionText: String = Bundle.main.fullVersionString!,
-                url: URL,
+                url: URL? = nil,
                 urlColor: NSColor = .systemBlue,
                 copyrightText: String = Bundle.main.copyright!) {
         self.icon = icon

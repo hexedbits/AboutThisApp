@@ -23,7 +23,7 @@ final class ViewController: NSViewController {
 
     @IBAction func didClickDisplay(_ sender: NSButton) {
         let metadata = AppMetadata(versionText: Bundle.main.fullVersionString!,
-                                   altVersionText: "Suprise 🎉",
+                                   altVersionText: "🎉 optional \"easter egg\" text 🎉",
                                    url: URL(string: "https://hexedbits.com")!,
                                    urlColor: .systemRed)
         let panel = AboutThisAppPanel(metadata: metadata)

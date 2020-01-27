@@ -43,8 +43,9 @@ public final class AboutThisAppViewController: NSViewController {
         return btn
     }()
 
-    public private(set) lazy var urlButton: NSButton = {
-        let btn = NSButton(title: self.metadata.url.displayText,
+    public private(set) lazy var urlButton: NSButton? = {
+        guard let url = self.metadata.url else { return nil }
+        let btn = NSButton(title: url.displayText,
                            target: self,
                            action: #selector(didClickURL(_:)))
         btn.isBordered = false
@@ -83,7 +84,8 @@ public final class AboutThisAppViewController: NSViewController {
             self.versionButton,
             self.urlButton,
             self.copyrightLabel
-        ])
+            ].compactMap { $0 }
+        )
 
         stackView.orientation = .vertical
         stackView.distribution = .fillProportionally
@@ -114,6 +116,7 @@ public final class AboutThisAppViewController: NSViewController {
 
     @objc
     private func didClickURL(_ sender: NSButton) {
-        NSWorkspace.shared.open(self.metadata.url)
+        guard let url = self.metadata.url else { return }
+        NSWorkspace.shared.open(url)
     }
 }
