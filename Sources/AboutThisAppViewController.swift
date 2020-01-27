@@ -104,7 +104,7 @@ public final class AboutThisAppViewController: NSViewController {
             stackView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -16),
             stackView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 32),
             stackView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -32),
-            stackView.widthAnchor.constraint(greaterThanOrEqualToConstant: 300),
+            stackView.widthAnchor.constraint(equalToConstant: 300),
         ])
     }
 

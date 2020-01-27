@@ -65,5 +65,7 @@ extension NSTextField {
         self.backgroundColor = .clear
         self.alignment = .center
         self.lineBreakMode = .byWordWrapping
+        self.usesSingleLineMode = false
+        self.maximumNumberOfLines = 20
     }
 }
