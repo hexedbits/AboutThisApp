@@ -39,6 +39,7 @@ public final class AboutThisAppViewController: NSViewController {
                            target: self,
                            action: #selector(didClickVersion(_:)))
         btn.isBordered = false
+        btn.cell?.font = NSFont.systemFont(ofSize: 13)
         btn.contentTintColor = .secondaryLabelColor
         return btn
     }()
@@ -49,14 +50,14 @@ public final class AboutThisAppViewController: NSViewController {
                            target: self,
                            action: #selector(didClickURL(_:)))
         btn.isBordered = false
+        btn.cell?.font = NSFont.systemFont(ofSize: 13)
         btn.contentTintColor = self.metadata.urlColor
         return btn
     }()
 
     public private(set) lazy var copyrightLabel: NSTextField = {
         let label = NSTextField(label: self.metadata.copyrightText)
-        label.font = NSFont.labelFont(ofSize: 10)
-        label.textColor = .labelColor
+        label.font = NSFont.labelFont(ofSize: 11)
         return label
     }()
 
@@ -103,6 +104,7 @@ public final class AboutThisAppViewController: NSViewController {
             stackView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -16),
             stackView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 32),
             stackView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -32),
+            stackView.widthAnchor.constraint(greaterThanOrEqualToConstant: 300),
         ])
     }
 
