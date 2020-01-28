@@ -18,7 +18,7 @@ public final class AboutThisAppPanel: NSPanel {
 
     public let aboutViewController: AboutThisAppViewController
 
-    public init(metadata: AppMetadata) {
+    public init(metadata: AppMetadata = AppMetadata()) {
         self.aboutViewController = AboutThisAppViewController(metadata: metadata)
 
         super.init(contentRect: .zero, styleMask: [.titled, .closable], backing: .buffered, defer: false)
