@@ -6,17 +6,28 @@
 
 This library provides a standard "About This App" view for Mac apps. It requires **zero configuration by default** for most projects, but it can also be easily customized.
 
-It is used in my apps [Red Eye](https://www.hexedbits.com/redeye/) and [Lucifer](https://www.hexedbits.com/lucifer/).
+AppKit provides a default "About This App" view for regular windowed applications, but you cannot customize it. It is also inacessible for apps that live only in the menu bar.
+
+This component is used in [Red Eye](https://www.hexedbits.com/redeye/) and [Lucifer](https://www.hexedbits.com/lucifer/).
 
 > TODO: screenshots
 
 ## Usage
 
-> TODO
+```swift
+let metadata = AppMetadata() // customize if desired
+
+let panel = AboutThisAppPanel(metadata: metadata)
+
+panel.makeKeyAndOrderFront(nil)
+```
 
 ## Requirements
 
-> TODO
+- macOS 10.14+
+- Swift 5+
+- Xcode 11+
+- SwiftLint
 
 ## Installation
 
