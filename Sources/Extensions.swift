@@ -21,7 +21,7 @@ extension Bundle {
         }
         return "Version \(release)"
     }
-    
+
     public var fullVersionString: String? {
         guard let release = self.shortVersionString,
             let build = self.infoDictionary?["CFBundleVersion"] else {
@@ -29,11 +29,11 @@ extension Bundle {
         }
         return "\(release) (\(build))"
     }
-    
+
     public var appName: String? {
         self.infoDictionary?["CFBundleName"] as? String
     }
-    
+
     public var copyright: String? {
         self.infoDictionary?["NSHumanReadableCopyright"] as? String
     }
