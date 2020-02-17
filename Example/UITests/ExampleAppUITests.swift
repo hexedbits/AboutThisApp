@@ -19,11 +19,24 @@ final class ExampleAppUITests: XCTestCase {
     override func setUp() {
         super.setUp()
         continueAfterFailure = false
-
     }
 
-    func testExample() {
+    func testDisplayAboutThisAppPanel() {
         let app = XCUIApplication()
         app.launch()
+
+        app.windows["AboutThisApp"].buttons["Display About This App"].click()
+        XCTAssertTrue(app.images["AppIcon"].exists)
+        XCTAssertTrue(app.staticTexts["ExampleApp"].exists)
+        XCTAssertTrue(app.buttons["hexedbits.com"].exists)
+        XCTAssertTrue(app.staticTexts["Copyright © 2020 Hexed Bits. All rights reserved."].exists)
+
+        XCTAssertTrue(app.buttons["Version 1.2.3 (666)"].exists)
+        app.buttons["Version 1.2.3 (666)"].click()
+
+        XCTAssertTrue(app.buttons["🎉 optional \"easter egg\" text 🎉"].exists)
+        app.buttons["🎉 optional \"easter egg\" text 🎉"].click()
+
+        XCTAssertTrue(app.buttons["Version 1.2.3 (666)"].exists)
     }
 }
