@@ -9,7 +9,7 @@
 #  https://github.com/realm/swiftlint
 #  ------------------------------
 
-VERSION="0.38.2"
+VERSION="0.39.1"
 FOUND=$(swiftlint version)
 
 if which swiftlint >/dev/null; then
