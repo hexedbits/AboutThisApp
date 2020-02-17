@@ -10,7 +10,9 @@ AppKit provides a default "About This App" view for regular windowed application
 
 This component is used in [Red Eye](https://www.hexedbits.com/redeye/) and [Lucifer](https://www.hexedbits.com/lucifer/).
 
-> TODO: screenshots
+<img src="https://raw.githubusercontent.com/hexedbits/AboutThisApp/dev/screenshots/screenshot_dark.png" width="50%" />
+
+<img src="https://raw.githubusercontent.com/hexedbits/AboutThisApp/dev/screenshots/screenshot_light.png" width="50%" />
 
 ## Usage
 
