@@ -1,0 +1,31 @@
+name: SwiftPM Integration
+
+on:
+  push:
+    branches:
+      - master
+      - dev
+  pull_request:
+    branches:
+      - master
+      - dev
+env:
+  DEVELOPER_DIR: /Applications/Xcode_11.3.app/Contents/Developer
+  MACOS_SDK: macosx10.15
+
+  SCHEME: AboutThisApp
+
+jobs:
+
+  macOS:
+    name: macOS Test
+    runs-on: macOS-latest
+    steps:
+      - name: git checkout
+        uses: actions/checkout@v1
+
+      - name: xcode version
+        run: xcodebuild -version -sdk
+
+      - name: swift build
+        run: swift build
