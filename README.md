@@ -8,7 +8,7 @@
 
 This library provides a standard "About This App" view for Mac apps. It requires **zero configuration by default** for typical projects, but it can also be easily customized.
 
-AppKit provides a default "About This App" view for regular windowed applications, but you cannot customize it. It is also inacessible for apps that live only in the menu bar.
+AppKit provides a default "About This App" view for regular windowed applications, but you cannot customize it. It is also inaccessible for apps that live only in the menu bar.
 
 This component is used in [Red Eye](https://www.hexedbits.com/redeye/) and [Lucifer](https://www.hexedbits.com/lucifer/).
 
