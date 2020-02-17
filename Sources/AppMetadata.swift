@@ -14,24 +14,50 @@
 
 import Cocoa
 
+/// Represents the metadata for the app.
 public struct AppMetadata {
 
+    /// The app icon.
+    /// The default value uses the `AppIcon` asset from asset catalog in the app's main bundle.
     public let icon: NSImage
 
+    /// The size of the icon. The default value is `80`.
+    /// - Note: This applies to both the width and height dimensions.
     public let iconSize: CGFloat
 
+    /// The name of the app.
+    /// The default is the value contained in the main bundle info.plist for the `CFBundleName` key.
     public let name: String
 
+    /// The app version.
+    /// The default is the value contained in the main bundle info.plist for the `CFBundleShortVersionString` key.
     public let versionText: String
 
+    /// Alternate text for the app version.
+    /// The default is the value contained in the main bundle info.plist for the `CFBundleShortVersionString` key
+    /// combined with the value for the `CFBundleVersion` key.
     public let altVersionText: String
 
+    /// The app website url. The default is `nil`.
     public let url: URL?
 
+    /// The link color for the url. The default is `.systemBlue`.
     public let urlColor: NSColor
 
+    /// The app copyright information.
+    /// The default is the value contained in the main bundle info.plist for the `NSHumanReadableCopyright` key.
     public let copyrightText: String
 
+    /// Creates a new `AppMetadata` instance with the specified values.
+    /// - Parameters:
+    ///   - icon: The app icon.
+    ///   - iconSize: The square dimension of the icon.
+    ///   - name: The app name.
+    ///   - versionText: The app version.
+    ///   - altVersionText: Alternate text for the version.
+    ///   - url: The app website url.
+    ///   - urlColor: The link color for the url.
+    ///   - copyrightText: The app copyright information.
     public init(icon: NSImage = NSImage.appIcon!,
                 iconSize: CGFloat = 80,
                 name: String = Bundle.main.appName!,

@@ -14,10 +14,14 @@
 
 import Cocoa
 
+/// A panel to display the "AboutThisApp" view controller.
 public final class AboutThisAppPanel: NSPanel {
 
+    /// The "About" view controller.
     public let aboutViewController: AboutThisAppViewController
 
+    /// Creates a new `AboutThisAppPanel`.
+    /// - Parameter metadata: The app meta data used to contstruct the view.
     public init(metadata: AppMetadata = AppMetadata()) {
         self.aboutViewController = AboutThisAppViewController(metadata: metadata)
 

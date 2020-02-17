@@ -14,26 +14,36 @@
 
 import Cocoa
 
+/// The view controller that contains the "About this app" view.
 public final class AboutThisAppViewController: NSViewController {
 
     // MARK: Properties
 
+    /// The app's metadata.
     public let metadata: AppMetadata
 
     private var displayAltText = false
 
     // MARK: Views
 
+    /// The image view containing the app icon.
+    /// - Note: This displays `self.metadata.icon`.
     public private(set) lazy var iconImageView: NSImageView = {
         NSImageView(image: self.metadata.icon)
     }()
 
+    /// The label containing the app name.
+    /// - Note: This displays `self.metadata.name`.
     public private(set) lazy var appNameLabel: NSTextField = {
         let label = NSTextField(label: self.metadata.name)
         label.font = NSFont.boldSystemFont(ofSize: 16)
         return label
     }()
 
+    /// The button displaying the app version number.
+    /// - Note: This displays `self.metadata.versionText`.
+    ///         When clicked, it toggles to display `self.metadata.altVersionText`.
+    ///         This can be used to display additional information or 'easter egg' text.
     public private(set) lazy var versionButton: NSButton = {
         let btn = NSButton(title: self.metadata.versionText,
                            target: self,
@@ -44,6 +54,8 @@ public final class AboutThisAppViewController: NSViewController {
         return btn
     }()
 
+    /// The button displaying the app url.
+    /// - Note: This displays `self.metadata.url`.
     public private(set) lazy var urlButton: NSButton? = {
         guard let url = self.metadata.url else { return nil }
         let btn = NSButton(title: url.displayText,
@@ -55,6 +67,8 @@ public final class AboutThisAppViewController: NSViewController {
         return btn
     }()
 
+    /// The label displaying the app copyright text.
+    /// - Note: This displays `self.metadata.copyrightText`.
     public private(set) lazy var copyrightLabel: NSTextField = {
         let label = NSTextField(label: self.metadata.copyrightText)
         label.font = NSFont.labelFont(ofSize: 11)
@@ -63,11 +77,14 @@ public final class AboutThisAppViewController: NSViewController {
 
     // MARK: Init
 
+    /// Creates a new `AboutThisAppViewController`.
+    /// - Parameter metadata: The metadata for the app.
     public init(metadata: AppMetadata) {
         self.metadata = metadata
         super.init(nibName: nil, bundle: nil)
     }
 
+    /// :nodoc:
     @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
