@@ -1,0 +1,42 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+      - dev
+  pull_request:
+    branches:
+      - master
+      - dev
+env:
+  DEVELOPER_DIR: /Applications/Xcode_11.3.app/Contents/Developer
+  MACOS_SDK: macosx10.15
+
+  PROJECT: AboutThisApp.xcodeproj
+  SCHEME: AboutThisApp
+
+  EXAMPLE_PROJ: ExampleApp.xcodeproj
+  EXAMPLE_SCHEME: ExampleApp
+
+jobs:
+
+  build-and-test:
+    name: macOS Test
+    runs-on: macOS-latest
+    steps:
+      - name: git checkout
+        uses: actions/checkout@v1
+
+      - name: xcode version
+        run: xcodebuild -version -sdk
+
+      - name: Unit Tests
+        run: |
+          set -o pipefail
+          xcodebuild clean test -project "$PROJECT" -scheme "$SCHEME" -sdk "$MACOS_SDK" -destination "arch=x86_64" -enableCodeCoverage YES -configuration Debug ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO | xcpretty -c;
+
+      - name: UI Tests
+        run: |
+          set -o pipefail
+          xcodebuild clean test -project "$EXAMPLE_PROJ" -scheme "$EXAMPLE_SCHEME" -sdk "$MACOS_SDK" -destination "arch=x86_64" -enableCodeCoverage YES -configuration Debug ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO | xcpretty -c;
