@@ -31,7 +31,17 @@ panel.makeKeyAndOrderFront(nil)
 
 ## Installation
 
-> TODO
+### [Swift Package Manager](https://swift.org/package-manager/)
+
+Add `AboutThisApp` to the `dependencies` value of your `Package.swift`.
+
+```swift
+dependencies: [
+    .package(url: "https://hexedbits.github.io/AboutThisApp", from: "1.0.0")
+]
+```
+
+Alternatively, you can add the package [directly via Xcode](https://developer.apple.com/documentation/xcode/adding_package_dependencies_to_your_app).
 
 ## Documentation
 
