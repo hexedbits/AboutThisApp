@@ -29,11 +29,3 @@ jobs:
 
       - name: swift build
         run: swift build
-
-      - name: SPM generate xcodeproj
-        run: swift package generate-xcodeproj
-
-      - name: Test
-        run: |
-          set -o pipefail
-          xcodebuild clean test -scheme "$SCHEME" -sdk "$MACOS_SDK" -destination "arch=x86_64" | xcpretty -c;
