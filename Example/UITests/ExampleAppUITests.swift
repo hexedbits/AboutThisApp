@@ -26,6 +26,10 @@ final class ExampleAppUITests: XCTestCase {
         app.launch()
 
         app.windows["AboutThisApp"].buttons["Display About This App"].click()
+        XCTAssertTrue(app.dialogs.firstMatch.exists)
+
+        app.dialogs.firstMatch.click()
+
         XCTAssertTrue(app.images["AppIcon"].exists)
         XCTAssertTrue(app.staticTexts["ExampleApp"].exists)
         XCTAssertTrue(app.buttons["hexedbits.com"].exists)
