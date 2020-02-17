@@ -14,7 +14,7 @@
     <a title="AppMetadata Structure Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">AboutThisApp Docs</a> (0% documented)</p>
+        <p><a href="../index.html">AboutThisApp Docs</a> (100% documented)</p>
         <p class="header-right"><a href="https://github.com/hexedbits/AboutThisApp"><img src="../img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
@@ -70,7 +70,7 @@
 
                 </div>
               </div>
-            <p>Undocumented</p>
+            <p>Represents the metadata for the app.</p>
 
           </section>
           <section class="section task-group-section">
@@ -89,7 +89,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The app icon.
+The default value uses the <code>AppIcon</code> asset from asset catalog in the app&rsquo;s main bundle.</p>
 
                       </div>
                       <div class="declaration">
@@ -116,7 +117,12 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The size of the icon. The default value is <code>80</code>.</p>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    This applies to both the width and height dimensions.
+
+</div>
 
                       </div>
                       <div class="declaration">
@@ -143,7 +149,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The name of the app.
+The default is the value contained in the main bundle info.plist for the <code>CFBundleName</code> key.</p>
 
                       </div>
                       <div class="declaration">
@@ -170,7 +177,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The app version.
+The default is the value contained in the main bundle info.plist for the <code>CFBundleShortVersionString</code> key.</p>
 
                       </div>
                       <div class="declaration">
@@ -197,7 +205,9 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Alternate text for the app version.
+The default is the value contained in the main bundle info.plist for the <code>CFBundleShortVersionString</code> key
+combined with the value for the <code>CFBundleVersion</code> key.</p>
 
                       </div>
                       <div class="declaration">
@@ -224,7 +234,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The app website url. The default is <code>nil</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -251,7 +261,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The link color for the url. The default is <code>.systemBlue</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -278,7 +288,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The app copyright information.
+The default is the value contained in the main bundle info.plist for the <code>NSHumanReadableCopyright</code> key.</p>
 
                       </div>
                       <div class="declaration">
@@ -305,7 +316,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Creates a new <code>AppMetadata</code> instance with the specified values.</p>
 
                       </div>
                       <div class="declaration">
@@ -323,6 +334,109 @@
 
                         </div>
                       </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>icon</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The app icon.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>iconSize</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The square dimension of the icon.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>name</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The app name.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>versionText</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The app version.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>altVersionText</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Alternate text for the version.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>url</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The app website url.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>urlColor</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The link color for the url.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>copyrightText</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The app copyright information.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
                     </section>
                   </div>
                 </li>
@@ -331,7 +445,7 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2020 <a class="link" href="https://jessesquires.com" target="_blank" rel="external">Jesse Squires</a>. All rights reserved. (Last updated: 2020-01-27)</p>
+          <p>&copy; 2020 <a class="link" href="https://jessesquires.com" target="_blank" rel="external">Jesse Squires</a>. All rights reserved. (Last updated: 2020-02-17)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
