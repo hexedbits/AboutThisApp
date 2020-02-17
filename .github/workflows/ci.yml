@@ -16,7 +16,7 @@ env:
   PROJECT: AboutThisApp.xcodeproj
   SCHEME: AboutThisApp
 
-  EXAMPLE_PROJ: ExampleApp.xcodeproj
+  EXAMPLE_PROJ: Example/ExampleApp.xcodeproj
   EXAMPLE_SCHEME: ExampleApp
 
 jobs:
