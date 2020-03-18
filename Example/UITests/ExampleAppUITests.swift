@@ -30,7 +30,7 @@ final class ExampleAppUITests: XCTestCase {
 
         app.dialogs.firstMatch.click()
 
-        XCTAssertTrue(app.images["AppIcon"].exists)
+        XCTAssertTrue(app.images["application icon"].exists)
         XCTAssertTrue(app.staticTexts["ExampleApp"].exists)
         XCTAssertTrue(app.buttons["hexedbits.com"].exists)
         XCTAssertTrue(app.staticTexts["Copyright © 2020 Hexed Bits. All rights reserved."].exists)
