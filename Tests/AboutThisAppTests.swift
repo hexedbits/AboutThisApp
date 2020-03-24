@@ -27,7 +27,7 @@ final class AboutThisAppTests: XCTestCase {
     }
 
     func testNSImageExtensions() {
-        XCTAssertNil(NSImage.appIcon)
+        XCTAssertNotNil(NSImage.appIcon)
     }
 
     func testURLExtensions() {
