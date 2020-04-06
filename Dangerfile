@@ -100,4 +100,4 @@ jazzy.check fail: :all
 # -----------------------------------------------------------------------------
 xcode_summary.inline_mode = true
 xcode_summary.ignored_files = 'Pods/**'
-xcode_summary.report 'xcodebuild.json'
+xcode_summary.report 'build/reports/errors.json '

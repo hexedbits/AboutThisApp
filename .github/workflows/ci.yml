@@ -28,28 +28,6 @@ jobs:
       - name: git checkout
         uses: actions/checkout@v1
 
-      # xcode build and test
-      - name: xcode version
-        run: xcodebuild -version -sdk
-
-      - name: list simulators
-        run: xcrun simctl list
-
-      - name: Unit Tests
-        run: |
-          set -o pipefail
-          xcodebuild clean test \
-            -project "$PROJECT" -scheme "$SCHEME" -sdk "$MACOS_SDK" -destination "arch=x86_64" \
-            ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO | xcpretty -c -f `xcpretty-json-formatter`;
-
-      - name: UI Tests
-        run: |
-          set -o pipefail
-          xcodebuild clean test \
-            -project "$EXAMPLE_PROJ" -scheme "$EXAMPLE_SCHEME" -sdk "$MACOS_SDK" -destination "arch=x86_64" \
-            ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO | xcpretty -c -f `xcpretty-json-formatter`;
-
-      # run danger
       - name: ruby versions
         run: |
           ruby --version
@@ -69,6 +47,26 @@ jobs:
           bundle config path vendor/bundle
           bundle install --without=documentation --jobs 4 --retry 3
           echo "::add-path::/Users/runner/Library/Python/2.7/bin"
+
+      - name: xcode version
+        run: xcodebuild -version -sdk
+
+      - name: list simulators
+        run: xcrun simctl list
+
+      - name: Unit Tests
+        run: |
+          set -o pipefail
+          xcodebuild clean test \
+            -project "$PROJECT" -scheme "$SCHEME" -sdk "$MACOS_SDK" -destination "arch=x86_64" \
+            ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO | xcpretty -c -f `xcpretty-json-formatter`;
+
+      - name: UI Tests
+        run: |
+          set -o pipefail
+          xcodebuild clean test \
+            -project "$EXAMPLE_PROJ" -scheme "$EXAMPLE_SCHEME" -sdk "$MACOS_SDK" -destination "arch=x86_64" \
+            ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO | xcpretty -c -f `xcpretty-json-formatter`;
 
       - name: danger
         env:
