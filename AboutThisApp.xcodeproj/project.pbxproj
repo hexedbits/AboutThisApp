@@ -13,6 +13,7 @@
 		8843D48623DD232700CC7517 /* AboutThisAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8843D48423DD232700CC7517 /* AboutThisAppViewController.swift */; };
 		8843D4C223DD324400CC7517 /* AboutThisAppPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8843D4C123DD324400CC7517 /* AboutThisAppPanel.swift */; };
 		8843D4C423DD509500CC7517 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8843D4C323DD509500CC7517 /* Extensions.swift */; };
+		88CAB523243BC79100B23136 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CAB522243BC79100B23136 /* File.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +36,7 @@
 		8843D48423DD232700CC7517 /* AboutThisAppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutThisAppViewController.swift; sourceTree = "<group>"; };
 		8843D4C123DD324400CC7517 /* AboutThisAppPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutThisAppPanel.swift; sourceTree = "<group>"; };
 		8843D4C323DD509500CC7517 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		88CAB522243BC79100B23136 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				8843D4C123DD324400CC7517 /* AboutThisAppPanel.swift */,
+				88CAB522243BC79100B23136 /* File.swift */,
 				8843D48423DD232700CC7517 /* AboutThisAppViewController.swift */,
 				8834D77023DF946000F2F09D /* AppMetadata.swift */,
 				8843D4C323DD509500CC7517 /* Extensions.swift */,
@@ -226,6 +229,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88CAB523243BC79100B23136 /* File.swift in Sources */,
 				8843D4C223DD324400CC7517 /* AboutThisAppPanel.swift in Sources */,
 				8843D4C423DD509500CC7517 /* Extensions.swift in Sources */,
 				8834D77123DF946000F2F09D /* AppMetadata.swift in Sources */,

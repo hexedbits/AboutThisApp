@@ -26,6 +26,8 @@ let panel = AboutThisAppPanel(metadata: metadata)
 panel.makeKeyAndOrderFront(nil)
 ```
 
+asdfaasdfsdf
+
 ## Requirements
 
 - macOS 10.14+
