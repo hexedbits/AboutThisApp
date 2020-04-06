@@ -1,6 +1,6 @@
 # Detecting changed files
-has_source_changes = !git.added_files.grep(/Sources/).empty?
-has_test_changes = !git.modified_files.grep(/Tests/).empty?
+has_source_changes = !git.added_files.grep(/Sources\//).empty?
+has_test_changes = !git.modified_files.grep(/Tests\//).empty?
 
 if git.lines_of_code > 500
     warn("This is a large pull request! Can you break it up into multiple smaller ones instead?")
