@@ -26,7 +26,7 @@ end
 # -----------------------------------------------------------------------------
 # Fail on TODOs in code
 # -----------------------------------------------------------------------------
-todoist.message = "Oops! We shouldn't commit TODOs. Please fix them before merging."
+todoist.message = "Oops! We should not commit TODOs. Please fix them before merging."
 todoist.fail_for_todos
 
 # -----------------------------------------------------------------------------
@@ -41,7 +41,7 @@ end
 # -----------------------------------------------------------------------------
 no_changelog_entry = !git.modified_files.include?("CHANGELOG.md")
 if has_source_changes && no_changelog_entry
-    warn("There's no CHANGELOG entry. Do you need to add one?.")
+    warn("There is no CHANGELOG entry. Do you need to add one?")
 end
 
 # -----------------------------------------------------------------------------
