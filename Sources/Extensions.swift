@@ -14,6 +14,16 @@
 
 import Cocoa
 
+public class Testing {
+
+}
+
+private class LOL {
+
+}
+
+
+
 extension Bundle {
 
     /// Returns version text using the info plist value
