@@ -32,7 +32,7 @@ todoist.fail_for_todos
 # -----------------------------------------------------------------------------
 # All pull requests should be submitted to dev/develop branch
 # -----------------------------------------------------------------------------
-if github.branch_for_base != "dev" || github.branch_for_base != "develop"
+if github.branch_for_base != "dev" && github.branch_for_base != "develop"
     warn("Pull requests should be submitted to the dev branch only.")
 end
 
