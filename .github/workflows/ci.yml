@@ -22,7 +22,7 @@ env:
 jobs:
 
   build-test-lint:
-    name: build, test, lint
+    name: Build, Test, Lint
     runs-on: macOS-latest
     steps:
       - name: git checkout
@@ -54,19 +54,25 @@ jobs:
       - name: list simulators
         run: xcrun simctl list
 
-      - name: Unit Tests
+      - name: unit tests
         run: |
           set -o pipefail
           xcodebuild clean test \
-            -project "$PROJECT" -scheme "$SCHEME" -sdk "$MACOS_SDK" -destination "arch=x86_64" \
-            ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO | xcpretty -c
+              -project "$PROJECT" \
+              -scheme "$SCHEME" \
+              -sdk "$MACOS_SDK" \
+              -destination "arch=x86_64" \
+              ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO | xcpretty -c
 
-      - name: UI Tests
+      - name: ui tests
         run: |
           set -o pipefail
           xcodebuild clean test \
-            -project "$EXAMPLE_PROJ" -scheme "$EXAMPLE_SCHEME" -sdk "$MACOS_SDK" -destination "arch=x86_64" \
-            ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO | xcpretty -c
+              -project "$EXAMPLE_PROJ" \
+              -scheme "$EXAMPLE_SCHEME" \
+              -sdk "$MACOS_SDK" \
+              -destination "arch=x86_64" \
+              ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO | xcpretty -c
 
       - name: danger
         env:
