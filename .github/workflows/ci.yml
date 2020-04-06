@@ -21,13 +21,14 @@ env:
 
 jobs:
 
-  job-build-and-test:
-    name: build and test
+  build-test-lint:
+    name: build, test, lint
     runs-on: macOS-latest
     steps:
       - name: git checkout
         uses: actions/checkout@v1
 
+      # xcode build and test
       - name: xcode version
         run: xcodebuild -version -sdk
 
@@ -41,18 +42,14 @@ jobs:
           set -o pipefail
           xcodebuild clean test -project "$EXAMPLE_PROJ" -scheme "$EXAMPLE_SCHEME" -sdk "$MACOS_SDK" -destination "arch=x86_64" -enableCodeCoverage YES -configuration Debug ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO | xcpretty -c;
 
-  job-lint-and-check:
-    name: Lint and Check
-    needs: [job-build-and-test]
-    runs-on: macOS-latest
-    steps:
+      # run danger
       - name: ruby versions
         run: |
           ruby --version
           gem --version
           bundler --version
 
-      - name: cache
+      - name: cache gems
         uses: actions/cache@v1
         with:
           path: vendor/bundle
