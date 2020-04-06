@@ -14,6 +14,8 @@
 
 import Cocoa
 
+let x = 10000000
+
 extension Bundle {
 
     /// Returns version text using the info plist value
@@ -40,6 +42,7 @@ extension Bundle {
 
     /// Returns the app name using the info plist value for the `CFBundleName` key, if it exists.
     public var appName: String? {
+
         self.infoDictionary?["CFBundleName"] as? String
     }
 
@@ -65,6 +68,7 @@ extension URL {
             return self.absoluteString
         }
         return host + self.path
+
     }
 }
 
