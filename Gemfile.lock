@@ -51,8 +51,6 @@ GEM
       thor (~> 0.19)
     danger-todoist (2.0.1)
       danger-plugin-api (~> 1.0)
-    danger-xcode_summary (0.5.1)
-      danger-plugin-api (~> 1.0)
     danger-xcov (0.2.2)
       danger (>= 2.1)
       xcov (>= 0.9)
@@ -93,7 +91,6 @@ GEM
     public_suffix (4.0.4)
     rake (13.0.1)
     rchardet (1.8.0)
-    rouge (2.0.7)
     rubyzip (1.1.7)
     sawyer (0.8.2)
       addressable (>= 2.3.5)
@@ -108,10 +105,6 @@ GEM
       fastlane_core (>= 0.7, < 1.0.0)
       slack-notifier (~> 1.3)
       terminal-table
-    xcpretty (0.3.0)
-      rouge (~> 2.0.7)
-    xcpretty-json-formatter (0.1.1)
-      xcpretty (~> 0.2, >= 0.0.7)
 
 PLATFORMS
   ruby
@@ -125,10 +118,7 @@ DEPENDENCIES
   danger-prose
   danger-swiftlint
   danger-todoist
-  danger-xcode_summary
   danger-xcov
-  xcpretty
-  xcpretty-json-formatter
 
 BUNDLED WITH
    2.1.4

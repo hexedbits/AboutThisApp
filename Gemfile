@@ -11,9 +11,6 @@ gem 'danger-prose'
 
 # xcode, ios, macos
 gem 'danger-xcov'
-gem 'danger-xcode_summary'
-gem 'xcpretty'
-gem 'xcpretty-json-formatter'
 
 gem 'danger-swiftlint'
 gem 'danger-jazzy'

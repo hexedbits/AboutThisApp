@@ -94,10 +94,3 @@ missed_localizable_strings
 # -----------------------------------------------------------------------------
 jazzy.check
 jazzy.check fail: :all
-
-# -----------------------------------------------------------------------------
-# Display Xcode build summary report
-# -----------------------------------------------------------------------------
-xcode_summary.inline_mode = true
-xcode_summary.ignored_files = 'Pods/**'
-xcode_summary.report './build/reports/errors.json '
