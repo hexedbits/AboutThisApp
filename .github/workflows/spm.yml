@@ -15,8 +15,8 @@ env:
 
 jobs:
 
-  macOS:
-    name: macOS Test
+  job-build:
+    name: build
     runs-on: macOS-latest
     steps:
       - name: git checkout
