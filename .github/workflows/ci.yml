@@ -21,8 +21,8 @@ env:
 
 jobs:
 
-  build-and-test:
-    name: macOS Test
+  job-build-and-test:
+    name: build and test
     runs-on: macOS-latest
     steps:
       - name: git checkout
@@ -40,3 +40,33 @@ jobs:
         run: |
           set -o pipefail
           xcodebuild clean test -project "$EXAMPLE_PROJ" -scheme "$EXAMPLE_SCHEME" -sdk "$MACOS_SDK" -destination "arch=x86_64" -enableCodeCoverage YES -configuration Debug ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO | xcpretty -c;
+
+  job-lint-and-check:
+    name: Lint and Check
+    needs: [job-build-and-test]
+    runs-on: macOS-latest
+    steps:
+      - name: ruby versions
+        run: |
+          ruby --version
+          gem --version
+          bundler --version
+
+      - name: cache
+        uses: actions/cache@v1
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}-gem-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-gem-
+
+      - name: bundle install
+        run: |
+          bundle config path vendor/bundle
+          bundle install --without=documentation --jobs 4 --retry 3
+          echo "::add-path::/Users/runner/Library/Python/2.7/bin"
+
+      - name: danger
+        env:
+          DANGER_GITHUB_API_TOKEN: ${{ secrets.DANGER_GITHUB_API_TOKEN }}
+        run: bundle exec danger
