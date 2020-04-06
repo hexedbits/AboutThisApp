@@ -16,7 +16,7 @@ env:
 jobs:
 
   job-build:
-    name: build
+    name: SwiftPM Build
     runs-on: macOS-latest
     steps:
       - name: git checkout
