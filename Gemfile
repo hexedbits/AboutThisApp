@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'danger'
+gem 'rubyzip', '>= 1.3.0'
 
 # github
 gem 'danger-auto_label'
