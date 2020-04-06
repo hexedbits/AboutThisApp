@@ -74,6 +74,9 @@ jobs:
               -destination "arch=x86_64" \
               ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO | xcpretty -c
 
+      - name: jazzy docs
+        run: ./scripts/build_docs.sh
+
       - name: danger
         env:
           DANGER_GITHUB_API_TOKEN: ${{ secrets.DANGER_GITHUB_API_TOKEN }}

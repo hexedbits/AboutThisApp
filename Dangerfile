@@ -92,5 +92,4 @@ missed_localizable_strings
 # -----------------------------------------------------------------------------
 # Jazzy docs - check for new, undocumented symbols
 # -----------------------------------------------------------------------------
-jazzy.check
 jazzy.check fail: :all

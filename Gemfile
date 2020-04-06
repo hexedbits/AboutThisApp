@@ -13,7 +13,9 @@ gem 'danger-prose'
 gem 'danger-xcov'
 
 gem 'danger-swiftlint'
+
 gem 'danger-jazzy'
+gem 'jazzy'
 
 gem 'danger-duplicate_localizable_strings'
 gem 'danger-missed_localizable_strings'
