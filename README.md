@@ -2,7 +2,7 @@
 
 [![Actions Status](https://github.com/hexedbits/AboutThisApp/workflows/CI/badge.svg)](https://github.com/hexedbits/AboutThisApp/actions)
 
-*A standard "About This App" view for any Mac app*
+*A standard, customizable "About This App" view for any Mac app*
 
 ## About
 
