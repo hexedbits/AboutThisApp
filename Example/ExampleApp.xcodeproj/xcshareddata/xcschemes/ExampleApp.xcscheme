@@ -41,7 +41,24 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES"
-      codeCoverageEnabled = "YES">
+      codeCoverageEnabled = "YES"
+      onlyGenerateCoverageForSpecifiedTargets = "YES">
+      <CodeCoverageTargets>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "8843D49023DD24B700CC7517"
+            BuildableName = "ExampleApp.app"
+            BlueprintName = "ExampleApp"
+            ReferencedContainer = "container:ExampleApp.xcodeproj">
+         </BuildableReference>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "8843D46923DD22B100CC7517"
+            BuildableName = "AboutThisApp.framework"
+            BlueprintName = "AboutThisApp"
+            ReferencedContainer = "container:../AboutThisApp.xcodeproj">
+         </BuildableReference>
+      </CodeCoverageTargets>
       <Testables>
          <TestableReference
             skipped = "NO"
