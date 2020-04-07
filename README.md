@@ -49,19 +49,7 @@ Alternatively, you can add the package [directly via Xcode](https://developer.ap
 
 ## Documentation
 
-Read the [docs](https://hexedbits.github.io/AboutThisApp). Generated with [jazzy](https://github.com/realm/jazzy). Hosted by [GitHub Pages](https://pages.github.com).
-
-#### Generate
-
-````bash
-$ ./scripts/build_docs.sh
-````
-
-#### Preview
-
-````bash
-$ open index.html -a Safari
-````
+You can read the [documentation here](https://hexedbits.github.io/AboutThisApp). Generated with [jazzy](https://github.com/realm/jazzy). Hosted by [GitHub Pages](https://pages.github.com).
 
 ## Contributing
 
