@@ -2,13 +2,13 @@
 
 [![Actions Status](https://github.com/hexedbits/AboutThisApp/workflows/CI/badge.svg)](https://github.com/hexedbits/AboutThisApp/actions)
 
-*A standard, customizable "About This App" view for any Mac app*
+*A standard, customizable "About This App" panel for any Mac app*
 
 ## About
 
-This library provides a standard "About This App" view for Mac apps. It requires **zero configuration by default** for typical projects, but it can also be easily customized.
+This library provides a standard "About This App" panel for Mac apps. It requires **zero configuration by default** for typical projects, and it can be easily customized.
 
-AppKit provides a default "About This App" view for regular windowed applications, but you cannot customize it. It is also inaccessible for apps that live only in the menu bar.
+AppKit provides a default "About This App" panel via [`NSApp.orderFrontStandardAboutPanel()`](https://developer.apple.com/documentation/appkit/nsapplication/1428479-orderfrontstandardaboutpanel), but customization is limited.
 
 This component is used in [Red Eye](https://www.hexedbits.com/redeye/) and [Lucifer](https://www.hexedbits.com/lucifer/).
 
