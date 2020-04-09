@@ -11,10 +11,8 @@ on:
       - dev
 env:
   DEVELOPER_DIR: /Applications/Xcode_11.4.app/Contents/Developer
-  MACOS_SDK: macosx10.15
 
 jobs:
-
   job-build:
     name: SwiftPM Build
     runs-on: macOS-latest
