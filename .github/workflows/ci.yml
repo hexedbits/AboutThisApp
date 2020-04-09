@@ -20,33 +20,12 @@ env:
   EXAMPLE_SCHEME: ExampleApp
 
 jobs:
-
-  build-test-lint:
-    name: Build, Test, Lint
+  job-build-test:
+    name: Build and Test
     runs-on: macOS-latest
     steps:
       - name: git checkout
         uses: actions/checkout@v1
-
-      - name: ruby versions
-        run: |
-          ruby --version
-          gem --version
-          bundler --version
-
-      - name: cache gems
-        uses: actions/cache@v1
-        with:
-          path: vendor/bundle
-          key: ${{ runner.os }}-gem-${{ hashFiles('**/Gemfile.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-gem-
-
-      - name: bundle install
-        run: |
-          bundle config path vendor/bundle
-          bundle install --without=documentation --jobs 4 --retry 3
-          echo "::add-path::/Users/runner/Library/Python/2.7/bin"
 
       - name: xcode version
         run: xcodebuild -version -sdk
@@ -70,11 +49,3 @@ jobs:
               -sdk "$MACOS_SDK" \
               -destination "arch=x86_64" \
               ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO | xcpretty -c
-
-      - name: jazzy docs
-        run: bundle exec jazzy --output docs/
-
-      - name: danger
-        env:
-          DANGER_GITHUB_API_TOKEN: ${{ secrets.DANGER_GITHUB_API_TOKEN }}
-        run: bundle exec danger
