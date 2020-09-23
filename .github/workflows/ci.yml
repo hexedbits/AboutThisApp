@@ -10,7 +10,8 @@ on:
       - master
       - dev
 env:
-  DEVELOPER_DIR: /Applications/Xcode_11.4.app/Contents/Developer
+  # https://github.com/actions/virtual-environments/tree/main/images/macos
+  DEVELOPER_DIR: /Applications/Xcode_12.app/Contents/Developer
   MACOS_SDK: macosx10.15
 
   PROJECT: AboutThisApp.xcodeproj
