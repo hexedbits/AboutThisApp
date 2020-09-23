@@ -7,7 +7,14 @@ The changelog for `AboutThisApp`. Also see the [releases](https://github.com/hex
 NEXT
 ----
 
-- Update to Swift 5.2 and Xcode 11.4
+- TBA
+
+1.0.1
+-----
+
+This release closes the [1.0.1 milestone](https://github.com/hexedbits/AboutThisApp/milestone/1?closed=1).
+
+- Upgraded to Swift 5.3 and Xcode 12
 
 1.0.0
 -----
