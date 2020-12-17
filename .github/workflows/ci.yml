@@ -23,7 +23,7 @@ env:
 
 jobs:
   job-main:
-    name: run tests
+    name: Build and Test
     runs-on: macOS-latest
     steps:
       - name: git checkout
