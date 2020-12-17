@@ -8,9 +8,6 @@ gem 'synx'
 # ------------
 gem 'danger', '~> 8.0'
 
-# github
-gem 'danger-auto_label'
-
 # general
 gem 'danger-prose'
 
