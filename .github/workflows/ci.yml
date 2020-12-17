@@ -3,26 +3,27 @@ name: CI
 on:
   push:
     branches:
-      - master
+      - main
       - dev
   pull_request:
     branches:
-      - master
+      - main
       - dev
+
 env:
   # https://github.com/actions/virtual-environments/tree/main/images/macos
-  DEVELOPER_DIR: /Applications/Xcode_12.app/Contents/Developer
-  MACOS_SDK: macosx10.15
+  DEVELOPER_DIR: /Applications/Xcode_12.3.app/Contents/Developer
+  MACOS_SDK: macosx11.1
 
   PROJECT: AboutThisApp.xcodeproj
   SCHEME: AboutThisApp
 
-  EXAMPLE_PROJ: Example/ExampleApp.xcodeproj
+  EXAMPLE_PROJECT: Example/ExampleApp.xcodeproj
   EXAMPLE_SCHEME: ExampleApp
 
 jobs:
-  job-build-test:
-    name: Build and Test
+  job-main:
+    name: run tests
     runs-on: macOS-latest
     steps:
       - name: git checkout
@@ -45,7 +46,7 @@ jobs:
         run: |
           set -o pipefail
           xcodebuild clean test \
-              -project "$EXAMPLE_PROJ" \
+              -project "$EXAMPLE_PROJECT" \
               -scheme "$EXAMPLE_SCHEME" \
               -sdk "$MACOS_SDK" \
               -destination "arch=x86_64" \

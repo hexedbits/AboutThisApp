@@ -3,15 +3,16 @@ name: SwiftPM Integration
 on:
   push:
     branches:
-      - master
+      - main
       - dev
   pull_request:
     branches:
-      - master
+      - main
       - dev
+
 env:
   # https://github.com/actions/virtual-environments/tree/main/images/macos
-  DEVELOPER_DIR: /Applications/Xcode_12.app/Contents/Developer
+  DEVELOPER_DIR: /Applications/Xcode_12.3.app/Contents/Developer
 
 jobs:
   job-build:
