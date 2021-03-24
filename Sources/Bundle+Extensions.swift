@@ -49,37 +49,3 @@ extension Bundle {
         self.infoDictionary?["NSHumanReadableCopyright"] as? String
     }
 }
-
-extension NSImage {
-
-    /// Returns the app icon (using `NSImage.applicationIconName`) from the
-    /// asset in the main bundle's asset catalog, if it exists.
-    public static var appIcon: NSImage? {
-        NSImage(named: NSImage.applicationIconName)
-    }
-}
-
-extension URL {
-    var displayText: String {
-        guard let host = self.host else {
-            return self.absoluteString
-        }
-        return host + self.path
-    }
-}
-
-extension NSTextField {
-    convenience init(label: String?) {
-        self.init(string: label ?? "")
-        self.textColor = .labelColor
-        self.isEditable = false
-        self.isSelectable = false
-        self.isBezeled = false
-        self.isBordered = false
-        self.backgroundColor = .clear
-        self.alignment = .center
-        self.lineBreakMode = .byWordWrapping
-        self.usesSingleLineMode = false
-        self.maximumNumberOfLines = 20
-    }
-}

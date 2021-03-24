@@ -21,6 +21,10 @@ final class ExampleAppUITests: XCTestCase {
         continueAfterFailure = false
     }
 
+    override func tearDown() {
+        super.tearDown()
+    }
+
     func testDisplayAboutThisAppPanel() {
         let app = XCUIApplication()
         app.launch()

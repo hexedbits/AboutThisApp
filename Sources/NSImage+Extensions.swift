@@ -12,7 +12,13 @@
 //  https://www.hexedbits.com
 // 
 
-import Cocoa
+import AppKit
 
-@main
-final class AppDelegate: NSObject, NSApplicationDelegate { }
+extension NSImage {
+
+    /// Returns the app icon (using `NSImage.applicationIconName`) from the
+    /// asset in the main bundle's asset catalog, if it exists.
+    public static var appIcon: NSImage? {
+        NSImage(named: NSImage.applicationIconName)
+    }
+}

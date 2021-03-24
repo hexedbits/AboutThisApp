@@ -12,7 +12,13 @@
 //  https://www.hexedbits.com
 // 
 
-import Cocoa
+import Foundation
 
-@main
-final class AppDelegate: NSObject, NSApplicationDelegate { }
+extension URL {
+    var displayText: String {
+        guard let host = self.host else {
+            return self.absoluteString
+        }
+        return host + self.path
+    }
+}

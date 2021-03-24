@@ -17,10 +17,6 @@ import Cocoa
 
 final class ViewController: NSViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
     @IBAction func didClickDisplay(_ sender: NSButton) {
         let metadata = AppMetadata(versionText: Bundle.main.fullVersionString!,
                                    altVersionText: "🎉 optional \"easter egg\" text 🎉",
