@@ -31,9 +31,15 @@ panel.makeKeyAndOrderFront(nil)
 - macOS 10.14+
 - Swift 5.3+
 - Xcode 12.0+
-- SwiftLint
+- [SwiftLint](https://github.com/realm/SwiftLint)
 
 ## Installation
+
+### [CocoaPods](http://cocoapods.org)
+
+````ruby
+pod 'AboutThisApp', '~> 1.0.0'
+````
 
 ### [Swift Package Manager](https://swift.org/package-manager/)
 
@@ -70,4 +76,4 @@ Created and maintained by [**Jesse Squires**](https://www.jessesquires.com).
 
 Released under the MIT License. See `LICENSE` for details.
 
->**Copyright &copy; 2020-present Jesse Squires.**
+> **Copyright &copy; 2020-present Jesse Squires.**
