@@ -13,6 +13,7 @@ on:
 env:
   # https://github.com/actions/virtual-environments/tree/main/images/macos
   DEVELOPER_DIR: /Applications/Xcode_12.4.app/Contents/Developer
+
   MACOS_SDK: macosx11.1
 
   PROJECT: AboutThisApp.xcodeproj
@@ -21,33 +22,44 @@ env:
   EXAMPLE_PROJECT: Example/ExampleApp.xcodeproj
   EXAMPLE_SCHEME: ExampleApp
 
+  MACOS_DEST: "arch=x86_64"
+
 jobs:
-  job-main:
-    name: Build and Test
+  env-details:
+    name: Environment details
+    runs-on: macOS-latest
+    steps:
+      - name: xcode version
+        run: xcodebuild -version -sdk
+
+  unit-tests:
+    name: Unit Tests
     runs-on: macOS-latest
     steps:
       - name: git checkout
         uses: actions/checkout@v2
-
-      - name: xcode version
-        run: xcodebuild -version -sdk
-
-      - name: unit tests
+      - name: run unit tests
         run: |
           set -o pipefail
           xcodebuild clean test \
               -project "$PROJECT" \
               -scheme "$SCHEME" \
               -sdk "$MACOS_SDK" \
-              -destination "arch=x86_64" \
+              -destination "$MACOS_DEST" \
               ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO | xcpretty -c
 
-      - name: ui tests
+  ui-tests:
+    name: UI Tests
+    runs-on: macOS-latest
+    steps:
+      - name: git checkout
+        uses: actions/checkout@v2
+      - name: run ui tests
         run: |
           set -o pipefail
           xcodebuild clean test \
               -project "$EXAMPLE_PROJECT" \
               -scheme "$EXAMPLE_SCHEME" \
               -sdk "$MACOS_SDK" \
-              -destination "arch=x86_64" \
+              -destination "$MACOS_DEST" \
               ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO | xcpretty -c
