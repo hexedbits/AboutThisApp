@@ -42,6 +42,7 @@ jobs:
         run: xcodebuild -version -sdk
 
   test-macOS:
+    name: Unit Tests
     runs-on: macOS-11
     steps:
       - name: git checkout
@@ -58,6 +59,7 @@ jobs:
               ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO | xcpretty -c
 
   ui-test-macOS:
+    name: UI Tests
     runs-on: macOS-11
     steps:
       - name: git checkout
