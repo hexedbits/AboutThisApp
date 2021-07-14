@@ -1,42 +1,54 @@
+# GitHub Actions Virtual Environments
+# https://github.com/actions/virtual-environments/
+
 name: CI
 
 on:
   push:
     branches:
       - main
+    paths:
+      - '.github/workflows/ci.yml'
+      - 'Sources/**/*.*'
+      - 'Tests/**/*.*'
+      - 'Example/**/*.*'
   pull_request:
     branches:
       - main
+    paths:
+      - '.github/workflows/ci.yml'
+      - 'Sources/**/*.*'
+      - 'Tests/**/*.*'
+      - 'Example/**/*.*'
 
 env:
-  # https://github.com/actions/virtual-environments/tree/main/images/macos
-  DEVELOPER_DIR: /Applications/Xcode_12.4.app/Contents/Developer
-
-  MACOS_SDK: macosx11.1
-
   PROJECT: AboutThisApp.xcodeproj
   SCHEME: AboutThisApp
 
   EXAMPLE_PROJECT: Example/ExampleApp.xcodeproj
   EXAMPLE_SCHEME: ExampleApp
 
+  DEVELOPER_DIR: /Applications/Xcode_12.5.app/Contents/Developer
+
+  MACOS_SDK: macosx11.3
   MACOS_DEST: "arch=x86_64"
 
 jobs:
   env-details:
     name: Environment details
-    runs-on: macOS-latest
+    runs-on: macOS-11
     steps:
       - name: xcode version
         run: xcodebuild -version -sdk
 
-  unit-tests:
+  test-macOS:
     name: Unit Tests
-    runs-on: macOS-latest
+    runs-on: macOS-11
     steps:
       - name: git checkout
         uses: actions/checkout@v2
-      - name: run unit tests
+
+      - name: unit tests
         run: |
           set -o pipefail
           xcodebuild clean test \
@@ -46,13 +58,14 @@ jobs:
               -destination "$MACOS_DEST" \
               ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO | xcpretty -c
 
-  ui-tests:
+  ui-test-macOS:
     name: UI Tests
-    runs-on: macOS-latest
+    runs-on: macOS-11
     steps:
       - name: git checkout
         uses: actions/checkout@v2
-      - name: run ui tests
+
+      - name: ui tests
         run: |
           set -o pipefail
           xcodebuild clean test \
