@@ -34,7 +34,6 @@
 		0BDFEA4E260BEEFA004FFF4E /* NSTextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSTextField+Extensions.swift"; sourceTree = "<group>"; };
 		8834D77023DF946000F2F09D /* AppMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMetadata.swift; sourceTree = "<group>"; };
 		8843D46A23DD22B100CC7517 /* AboutThisApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AboutThisApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8843D46E23DD22B100CC7517 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8843D47323DD22B100CC7517 /* AboutThisAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AboutThisAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8843D47823DD22B100CC7517 /* AboutThisAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutThisAppTests.swift; sourceTree = "<group>"; };
 		8843D47A23DD22B100CC7517 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -87,7 +86,6 @@
 				8843D48423DD232700CC7517 /* AboutThisAppViewController.swift */,
 				8834D77023DF946000F2F09D /* AppMetadata.swift */,
 				8843D4C323DD509500CC7517 /* Bundle+Extensions.swift */,
-				8843D46E23DD22B100CC7517 /* Info.plist */,
 				0BDFEA46260BEED0004FFF4E /* NSImage+Extensions.swift */,
 				0BDFEA4E260BEEFA004FFF4E /* NSTextField+Extensions.swift */,
 				0BDFEA4A260BEEE8004FFF4E /* URL+Extensions.swift */,
@@ -394,7 +392,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Sources/Info.plist;
+				GENERATE_INFOPLIST_FILE = YES;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -419,7 +417,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Sources/Info.plist;
+				GENERATE_INFOPLIST_FILE = YES;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

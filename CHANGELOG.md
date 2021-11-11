@@ -7,7 +7,7 @@ The changelog for `AboutThisApp`. Also see the [releases](https://github.com/hex
 NEXT
 ----
 
-- Upgraded to Swift 5.4 and Xcode 12.5
+- Upgraded to Swift 5.5 and Xcode 13
 
 1.0.1
 -----

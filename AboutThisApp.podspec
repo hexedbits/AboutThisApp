@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
    s.source = { :git => 'https://github.com/hexedbits/AboutThisApp.git', :tag => s.version }
    s.source_files = 'Sources/*.swift'
 
-   s.swift_version = '5.4'
+   s.swift_version = '5.5'
 
    s.osx.deployment_target = '10.14'
 
