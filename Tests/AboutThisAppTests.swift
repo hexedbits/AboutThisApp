@@ -18,7 +18,7 @@ import XCTest
 final class AboutThisAppTests: XCTestCase {
 
     func testBundleExtensions() {
-        let bundle = Bundle.init(for: Self.self)
+        let bundle = Bundle(for: Self.self)
 
         XCTAssertEqual(bundle.shortVersionString, "Version 1.0")
         XCTAssertEqual(bundle.fullVersionString, "Version 1.0 (1)")

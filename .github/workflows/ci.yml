@@ -15,11 +15,6 @@ on:
   pull_request:
     branches:
       - main
-    paths:
-      - '.github/workflows/ci.yml'
-      - 'Sources/**/*.*'
-      - 'Tests/**/*.*'
-      - 'Example/**/*.*'
 
 env:
   PROJECT: AboutThisApp.xcodeproj
@@ -28,9 +23,9 @@ env:
   EXAMPLE_PROJECT: Example/ExampleApp.xcodeproj
   EXAMPLE_SCHEME: ExampleApp
 
-  DEVELOPER_DIR: /Applications/Xcode_12.5.app/Contents/Developer
+  DEVELOPER_DIR: /Applications/Xcode_13.1.app/Contents/Developer
 
-  MACOS_SDK: macosx11.3
+  MACOS_SDK: macosx12.0
   MACOS_DEST: "arch=x86_64"
 
 jobs:
