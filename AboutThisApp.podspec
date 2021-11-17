@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
    s.name = 'AboutThisApp'
-   s.version = '1.0.1'
+   s.version = '1.1.0'
    s.license = 'MIT'
 
    s.summary = 'A standard, customizable "About This App" panel for any Mac app'
