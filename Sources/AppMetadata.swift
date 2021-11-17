@@ -41,7 +41,9 @@ public struct AppMetadata {
     /// The app website url. The default is `nil`.
     public let url: URL?
 
-    /// The link color for the url. The default is `.systemBlue`.
+    /// The link color for the url.
+    /// The default is the app accent color ("AccentColor") if present in your asset catalog,
+    /// otherwise `.linkColor`.
     public let urlColor: NSColor
 
     /// The app copyright information.
@@ -64,7 +66,7 @@ public struct AppMetadata {
                 versionText: String = Bundle.main.shortVersionString!,
                 altVersionText: String = Bundle.main.fullVersionString!,
                 url: URL? = nil,
-                urlColor: NSColor = .systemBlue,
+                urlColor: NSColor = NSColor(named: "AccentColor") ?? .linkColor,
                 copyrightText: String = Bundle.main.copyright!) {
         self.icon = icon
         self.iconSize = iconSize

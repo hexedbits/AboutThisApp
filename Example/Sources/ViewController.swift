@@ -20,8 +20,7 @@ final class ViewController: NSViewController {
     @IBAction func didClickDisplay(_ sender: NSButton) {
         let metadata = AppMetadata(versionText: Bundle.main.fullVersionString!,
                                    altVersionText: "🎉 optional \"easter egg\" text 🎉",
-                                   url: URL(string: "https://hexedbits.com")!,
-                                   urlColor: .systemRed)
+                                   url: URL(string: "https://hexedbits.com")!)
         let panel = AboutThisAppPanel(metadata: metadata)
         panel.makeKeyAndOrderFront(nil)
     }
