@@ -23,10 +23,8 @@ env:
   EXAMPLE_PROJECT: Example/ExampleApp.xcodeproj
   EXAMPLE_SCHEME: ExampleApp
 
-  DEVELOPER_DIR: /Applications/Xcode_13.1.app/Contents/Developer
-
-  MACOS_SDK: macosx12.0
-  MACOS_DEST: "arch=x86_64"
+  DEVELOPER_DIR: /Applications/Xcode_13.2.1.app/Contents/Developer
+  MACOS_DEST: "platform=macOS,arch=x86_64"
 
 jobs:
   env-details:
@@ -49,9 +47,8 @@ jobs:
           xcodebuild clean test \
               -project "$PROJECT" \
               -scheme "$SCHEME" \
-              -sdk "$MACOS_SDK" \
               -destination "$MACOS_DEST" \
-              ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO | xcpretty -c
+              CODE_SIGN_IDENTITY="-" | xcpretty -c
 
   ui-test-macOS:
     name: UI Tests
@@ -66,6 +63,5 @@ jobs:
           xcodebuild clean test \
               -project "$EXAMPLE_PROJECT" \
               -scheme "$EXAMPLE_SCHEME" \
-              -sdk "$MACOS_SDK" \
               -destination "$MACOS_DEST" \
-              ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO | xcpretty -c
+              CODE_SIGN_IDENTITY="-" | xcpretty -c

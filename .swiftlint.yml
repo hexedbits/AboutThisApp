@@ -61,6 +61,7 @@ opt_in_rules:
   - trailing_closure
   - unneeded_parentheses_in_closure_argument
   - vertical_whitespace_between_cases
+  - prefer_self_in_static_references
 
   # lint
   - overridden_super_call
@@ -74,11 +75,10 @@ opt_in_rules:
   - unused_capture_list
   - duplicate_enum_cases
   - legacy_multiple
-  - balanced_xctest_lifecycle
 
 # Rules run by `swiftlint analyze` (experimental)
 analyzer_rules:
-  - unused_import
+  # - unused_import
   - unused_declaration
   - explicit_self
   - capture_variable
