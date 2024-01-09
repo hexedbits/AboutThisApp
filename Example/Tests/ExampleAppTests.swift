@@ -26,7 +26,7 @@ final class ExampleAppTests: XCTestCase {
         XCTAssertEqual(metadata.name, "ExampleApp")
         XCTAssertEqual(metadata.versionText, "Version 1.2.3")
         XCTAssertEqual(metadata.altVersionText, "Version 1.2.3 (666)")
-        XCTAssertEqual(metadata.url, nil)
+        XCTAssertNil(metadata.url)
         XCTAssertEqual(metadata.urlColor, NSColor(named: "AccentColor"))
         XCTAssertEqual(metadata.copyrightText, "Copyright © 2020 Hexed Bits. All rights reserved.")
     }

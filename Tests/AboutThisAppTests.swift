@@ -23,7 +23,7 @@ final class AboutThisAppTests: XCTestCase {
         XCTAssertEqual(bundle.shortVersionString, "Version 1.0")
         XCTAssertEqual(bundle.fullVersionString, "Version 1.0 (1)")
         XCTAssertEqual(bundle.appName, "AboutThisAppTests")
-        XCTAssertEqual(bundle.copyright, nil)
+        XCTAssertNil(bundle.copyright)
     }
 
     func testNSImageExtensions() {
