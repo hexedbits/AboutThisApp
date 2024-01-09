@@ -6,13 +6,13 @@ Pod::Spec.new do |s|
    s.summary = 'A standard, customizable "About This App" panel for any Mac app'
    s.homepage = 'https://github.com/hexedbits/AboutThisApp'
    s.documentation_url = 'https://hexedbits.github.io/AboutThisApp'
-   s.social_media_url = 'https://twitter.com/jesse_squires'
+   s.social_media_url = 'https://www.jessesquires.com'
    s.author = 'Jesse Squires'
 
    s.source = { :git => 'https://github.com/hexedbits/AboutThisApp.git', :tag => s.version }
    s.source_files = 'Sources/*.swift'
 
-   s.swift_version = '5.5'
+   s.swift_version = '5.9'
 
    s.osx.deployment_target = '10.14'
 
