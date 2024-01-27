@@ -38,7 +38,7 @@ panel.makeKeyAndOrderFront(nil)
 ### [CocoaPods](http://cocoapods.org)
 
 ````ruby
-pod 'AboutThisApp', '~> 1.0.0'
+pod 'AboutThisApp', '~> 2.0.0'
 ````
 
 ### [Swift Package Manager](https://swift.org/package-manager/)
@@ -47,7 +47,7 @@ Add `AboutThisApp` to the `dependencies` value of your `Package.swift`.
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/hexedbits/AboutThisApp", from: "1.0.0")
+    .package(url: "https://github.com/hexedbits/AboutThisApp", from: "2.0.0")
 ]
 ```
 
