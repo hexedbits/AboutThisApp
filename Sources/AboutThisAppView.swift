@@ -41,7 +41,7 @@ public struct AboutThisAppView: View {
                 .accessibilityLabel(self.metadata.name)
 
             Text(self.metadata.name)
-                .font(.body.bold())
+                .font(.title3.bold())
                 .foregroundColor(.primary)
 
             Button {
@@ -67,13 +67,14 @@ public struct AboutThisAppView: View {
             Text(self.metadata.copyrightText)
                 .font(.caption)
                 .foregroundColor(.primary)
+                .padding(.bottom, 12)
         }
         .frame(
             minWidth: 350,
             idealWidth: 350,
-            maxWidth: 400,
-            minHeight: 190,
-            idealHeight: 210,
+            maxWidth: 450,
+            minHeight: 200,
+            idealHeight: 220,
             maxHeight: 500,
             alignment: .center
         )

@@ -2,6 +2,13 @@
 
 The changelog for `AboutThisApp`. Also see the [releases](https://github.com/hexedbits/AboutThisApp/releases) on GitHub.
 
+2.0.1
+-----
+
+- Increase app name font size.
+- Minor adjustments to window size.
+
+
 2.0.0
 -----
 
