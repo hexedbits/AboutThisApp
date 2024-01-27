@@ -15,7 +15,6 @@
 import AppKit
 
 extension NSImage {
-
     /// Returns the app icon (using `NSImage.applicationIconName`) from the
     /// asset in the main bundle's asset catalog, if it exists.
     public static var appIcon: NSImage? {

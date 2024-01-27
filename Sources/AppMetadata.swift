@@ -12,11 +12,11 @@
 //  https://www.hexedbits.com
 // 
 
-import Cocoa
+import AppKit
+import Foundation
 
 /// Represents the metadata for the app.
 public struct AppMetadata {
-
     /// The app icon.
     /// The default value uses the `AppIcon` asset from asset catalog in the app's main bundle.
     public let icon: NSImage

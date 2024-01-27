@@ -12,7 +12,7 @@
 //  https://www.hexedbits.com
 // 
 
-import Cocoa
+import AppKit
 
 /// A panel to display the "AboutThisApp" view controller.
 public final class AboutThisAppPanel: NSPanel {
@@ -25,11 +25,10 @@ public final class AboutThisAppPanel: NSPanel {
     public init(metadata: AppMetadata = AppMetadata()) {
         self.aboutViewController = AboutThisAppViewController(metadata: metadata)
 
-        super.init(contentRect: .zero, styleMask: [.titled, .closable], backing: .buffered, defer: false)
+        super.init(contentRect: .zero, styleMask: [.titled, .closable, .resizable], backing: .buffered, defer: false)
 
         self.contentViewController = self.aboutViewController
-        self.titleVisibility = .hidden
-        self.titlebarAppearsTransparent = true
+        self.titlebarAppearsTransparent = false
         self.becomesKeyOnlyIfNeeded = false
 
         let screenFrame = NSScreen.main!.frame

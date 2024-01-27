@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B8818392B64D10700444D88 /* AboutThisAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8818382B64D10700444D88 /* AboutThisAppView.swift */; };
 		0BDFEA47260BEED0004FFF4E /* NSImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDFEA46260BEED0004FFF4E /* NSImage+Extensions.swift */; };
 		0BDFEA4B260BEEE8004FFF4E /* URL+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDFEA4A260BEEE8004FFF4E /* URL+Extensions.swift */; };
 		0BDFEA4F260BEEFA004FFF4E /* NSTextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDFEA4E260BEEFA004FFF4E /* NSTextField+Extensions.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B8818382B64D10700444D88 /* AboutThisAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutThisAppView.swift; sourceTree = "<group>"; };
 		0BDFEA46260BEED0004FFF4E /* NSImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSImage+Extensions.swift"; sourceTree = "<group>"; };
 		0BDFEA4A260BEEE8004FFF4E /* URL+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extensions.swift"; sourceTree = "<group>"; };
 		0BDFEA4E260BEEFA004FFF4E /* NSTextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSTextField+Extensions.swift"; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				8843D4C123DD324400CC7517 /* AboutThisAppPanel.swift */,
+				0B8818382B64D10700444D88 /* AboutThisAppView.swift */,
 				8843D48423DD232700CC7517 /* AboutThisAppViewController.swift */,
 				8834D77023DF946000F2F09D /* AppMetadata.swift */,
 				8843D4C323DD509500CC7517 /* Bundle+Extensions.swift */,
@@ -235,6 +238,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B8818392B64D10700444D88 /* AboutThisAppView.swift in Sources */,
 				8843D4C223DD324400CC7517 /* AboutThisAppPanel.swift in Sources */,
 				0BDFEA4B260BEEE8004FFF4E /* URL+Extensions.swift in Sources */,
 				8843D4C423DD509500CC7517 /* Bundle+Extensions.swift in Sources */,

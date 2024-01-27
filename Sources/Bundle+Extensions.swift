@@ -15,7 +15,6 @@
 import Cocoa
 
 extension Bundle {
-
     /// Returns version text using the info plist value
     /// for the `CFBundleShortVersionString` key, if it exists.
     /// - Note: For example, "Version 1.0"

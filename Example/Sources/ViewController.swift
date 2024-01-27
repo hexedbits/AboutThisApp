@@ -13,10 +13,9 @@
 // 
 
 import AboutThisApp
-import Cocoa
+import AppKit
 
 final class ViewController: NSViewController {
-
     @IBAction func didClickDisplay(_ sender: NSButton) {
         let metadata = AppMetadata(versionText: Bundle.main.fullVersionString!,
                                    altVersionText: "🎉 optional \"easter egg\" text 🎉",
