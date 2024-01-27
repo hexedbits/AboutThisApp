@@ -17,10 +17,8 @@ import AboutThisApp
 import XCTest
 
 final class ExampleAppTests: XCTestCase {
-
     func testDefaultAppMetadata() {
         let metadata = AppMetadata()
-
         XCTAssertEqual(metadata.icon, NSImage.appIcon!)
         XCTAssertEqual(metadata.iconSize, 80)
         XCTAssertEqual(metadata.name, "ExampleApp")
@@ -28,6 +26,6 @@ final class ExampleAppTests: XCTestCase {
         XCTAssertEqual(metadata.altVersionText, "Version 1.2.3 (666)")
         XCTAssertNil(metadata.url)
         XCTAssertEqual(metadata.urlColor, NSColor(named: "AccentColor"))
-        XCTAssertEqual(metadata.copyrightText, "Copyright © 2020 Hexed Bits. All rights reserved.")
+        XCTAssertEqual(metadata.copyrightText, "Copyright © 2020 Jesse Squires, Hexed Bits. All rights reserved.")
     }
 }

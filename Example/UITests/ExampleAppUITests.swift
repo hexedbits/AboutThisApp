@@ -12,10 +12,10 @@
 //  https://www.hexedbits.com
 // 
 
+import AboutThisApp
 import XCTest
 
 final class ExampleAppUITests: XCTestCase {
-
     override func setUp() {
         super.setUp()
         continueAfterFailure = false
@@ -30,10 +30,10 @@ final class ExampleAppUITests: XCTestCase {
 
         app.dialogs.firstMatch.click()
 
-        XCTAssertTrue(app.images["application icon"].exists)
+        XCTAssertTrue(app.images["ExampleApp"].exists)
         XCTAssertTrue(app.staticTexts["ExampleApp"].exists)
         XCTAssertTrue(app.buttons["hexedbits.com"].exists)
-        XCTAssertTrue(app.staticTexts["Copyright © 2020 Hexed Bits. All rights reserved."].exists)
+        XCTAssertTrue(app.staticTexts["Copyright © 2020 Jesse Squires, Hexed Bits. All rights reserved."].exists)
 
         XCTAssertTrue(app.buttons["Version 1.2.3 (666)"].exists)
         app.buttons["Version 1.2.3 (666)"].click()
