@@ -22,17 +22,5 @@ jobs:
       - name: git checkout
         uses: actions/checkout@v4
 
-      - name: ruby versions
-        run: |
-          ruby --version
-          gem --version
-          bundler --version
-
-      # https://github.com/ruby/setup-ruby
-      - name: ruby setup
-        uses: ruby/setup-ruby@v1
-        with:
-          bundler-cache: true
-
       - name: pod lint
-        run: bundle exec pod lib lint --verbose
+        run: pod lib lint --verbose
