@@ -19,7 +19,7 @@ import PackageDescription
 let package = Package(
     name: "AboutThisApp",
     platforms: [
-        .macOS(.v10_14)
+        .macOS(.v11)
     ],
     products: [
         .library(

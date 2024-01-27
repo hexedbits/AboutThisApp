@@ -28,7 +28,7 @@ panel.makeKeyAndOrderFront(nil)
 
 ## Requirements
 
-- macOS 10.14+
+- macOS 11.0+
 - Swift 5.9+
 - Xcode 15.0+
 - [SwiftLint](https://github.com/realm/SwiftLint)
