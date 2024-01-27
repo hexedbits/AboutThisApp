@@ -2,8 +2,6 @@
 
 The changelog for `AboutThisApp`. Also see the [releases](https://github.com/hexedbits/AboutThisApp/releases) on GitHub.
 
---------------------------------------
-
 2.0.0
 -----
 
@@ -12,6 +10,7 @@ This release closes the [2.0.0 milestone](https://github.com/hexedbits/AboutThis
 - Minimum macOS 11.0 now required. (#69)
 - Fix copyright text truncation bug. (#5)
 - Rewrite view in SwiftUI. You can now use the SwiftUI `AboutThisAppView` directly, if desired. AppKit clients can continue to use `AboutThisAppPanel`.
+- `AboutThisAppPanel` is now resizable.
 
 
 1.1.0
